@@ -1,0 +1,15 @@
+@startuml
+
+interface Reader
+
+abstract File
+class Text 
+class Csv 
+class Json 
+
+File --|> Text
+File --|> Csv
+File --|> Json
+
+
+@enduml
