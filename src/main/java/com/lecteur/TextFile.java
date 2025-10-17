@@ -1,21 +1,19 @@
-package com.lecteur;
+package main.java.com.lecteur;
 
 import java.util.ArrayList;
+
 import java.io.File;
 import java.io.FileInputStream;
 
-public class TextFile {
-  private ArrayList<String> text;
+public class TextFile extends CustomFile {
   private File file;
-  private int currentIndex;
+  private ArrayList<String> text;
 
   public TextFile() {
   };
 
   public TextFile(File f) {
-    this.file = f;
-    this.text = new ArrayList<String>();
-    this.currentIndex = 0;
+    super(f);
   }
 
   public void decode() {
@@ -36,32 +34,5 @@ public class TextFile {
     } catch (Exception e) {
       e.getStackTrace();
     }
-  }
-
-  public String lireEndroit() {
-    String resultat = new String();
-    for (String ligne : this.text) {
-      resultat += "\n" + ligne;
-    }
-    return resultat;
-  }
-
-  public String lireEnvers() {
-    String resultat = new String();
-    for (int i = text.size() - 1; i >= 0; i--) {
-      resultat += "\n" + this.text.get(i);
-    }
-    return resultat;
-  }
-
-  public String lirePalindrome() {
-    String resultat = new String();
-    for (String ligne : this.text) {
-      for (int i = ligne.length() - 1; i >= 0; i--) {
-        resultat += ligne.toCharArray()[i];
-      }
-      resultat += "\n";
-    }
-    return resultat;
   }
 }

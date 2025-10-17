@@ -1,4 +1,4 @@
-package com.lecteur;
+package main.java.com.lecteur;
 
 import java.io.FileInputStream;
 import java.util.ArrayList;
@@ -28,7 +28,6 @@ public class FileReader {
     System.out.println(result);
     System.out.println(tluser);
     System.out.println(palin);
-
   }
 
 }

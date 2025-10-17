@@ -1,3 +1,0 @@
-Hello world
-Ceci est mon fichier test
-je test le retour a la ligne
