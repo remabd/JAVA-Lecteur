@@ -1,15 +1,39 @@
 @startuml
+title Lecteur
 
-interface Reader
+top to bottom direction
 
-abstract File
-class Text 
-class Csv 
-class Json 
+interface Readable {
+  + lireEndroit(): String
+  + lireEnvers(): String
+  + lirePalindrome(): String
+}
 
-File --|> Text
-File --|> Csv
-File --|> Json
+Readable <|.. CustomFile
 
+abstract CustomFile {
+  # file: File
+  # text: String[]
+  + lireEndroit(): String
+  + lireEnvers(): String
+  + lirePalindrome(): String 
+  + {abstract} decode(): void
+}
+
+package "Files" {
+  class TextFile {
+    + decode(): void
+  }
+  class CsvFile {
+    + decode(): void
+  }
+  class JsonFile  {
+    + decode(): void
+  }
+}
+
+CustomFile <|-- TextFile
+CustomFile <|-- CsvFile
+CustomFile <|-- JsonFile
 
 @enduml
