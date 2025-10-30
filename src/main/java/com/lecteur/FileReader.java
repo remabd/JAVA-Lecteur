@@ -9,7 +9,6 @@ public class FileReader {
 
       File file = new File("file/text.txt");
       TextFile textFile = new TextFile(file);
-      textFile.decode();
       System.out.println(textFile.lireEndroit());
       System.out.println(textFile.lireEnvers());
       System.out.println(textFile.lirePalindrome());
@@ -19,7 +18,6 @@ public class FileReader {
 
       file = new File("file/csv.csv");
       CsvFile csvFile = new CsvFile(file);
-      csvFile.decode();
       System.out.println(csvFile.getText());
       System.out.println(csvFile.lireEndroit());
       System.out.println(csvFile.lireEnvers());

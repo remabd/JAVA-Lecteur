@@ -7,9 +7,10 @@ public class CsvFile extends CustomFile {
 
   public CsvFile(File f) {
     super(f);
+    this.decode();
   }
 
-  public void decode() {
+  protected void decode() {
     try {
       FileInputStream in = new FileInputStream(this.file);
       int i = in.read();

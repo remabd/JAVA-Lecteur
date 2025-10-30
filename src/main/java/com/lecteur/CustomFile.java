@@ -40,7 +40,7 @@ public abstract class CustomFile implements Readable {
     return resultat;
   }
 
-  public abstract void decode();
+  protected abstract void decode();
 
   public ArrayList<String> getText() {
     return this.text;
