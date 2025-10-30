@@ -1,33 +1,33 @@
 package main.java.com.lecteur;
 
-import java.io.FileInputStream;
-import java.util.ArrayList;
 import java.io.File;
 
 public class FileReader {
 
   public static void main(String[] args) {
-    File f = new File("file/test.txt");
-    // try {
-    // FileInputStream in = new FileInputStream(f);
-    // int i = in.read();
-    // while (i != -1) {
-    // System.out.println((char) i);
-    // i = in.read();
-    // }
-    // in.close();
-    // } catch (Exception e) {
-    // e.getStackTrace();
-    // }
+    try {
 
-    TextFile TF = new TextFile(f);
-    TF.decode();
-    String result = TF.lireEndroit();
-    String tluser = TF.lireEnvers();
-    String palin = TF.lirePalindrome();
-    System.out.println(result);
-    System.out.println(tluser);
-    System.out.println(palin);
+      File file = new File("file/text.txt");
+      TextFile textFile = new TextFile(file);
+      textFile.decode();
+      System.out.println(textFile.lireEndroit());
+      System.out.println(textFile.lireEnvers());
+      System.out.println(textFile.lirePalindrome());
+      // System.out.println(result);
+      // System.out.println(envers);
+      // System.out.println(palin);
+
+      file = new File("file/csv.csv");
+      CsvFile csvFile = new CsvFile(file);
+      csvFile.decode();
+      System.out.println(csvFile.getText());
+      System.out.println(csvFile.lireEndroit());
+      System.out.println(csvFile.lireEnvers());
+      System.out.println(csvFile.lirePalindrome());
+
+    } catch (Exception e) {
+      System.out.println(e);
+    }
+
   }
-
 }

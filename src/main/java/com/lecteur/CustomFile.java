@@ -5,15 +5,12 @@ import java.io.FileInputStream;
 import java.util.ArrayList;
 
 public abstract class CustomFile implements Readable {
-  private File file;
-  private ArrayList<String> text;
-
-  public CustomFile() {
-  };
+  protected File file;
+  protected ArrayList<String> text;
 
   public CustomFile(File f) {
-    this.text = new ArrayList<>();
     this.file = f;
+    this.text = new ArrayList<String>();
   }
 
   public String lireEndroit() {
@@ -41,5 +38,11 @@ public abstract class CustomFile implements Readable {
       resultat += "\n";
     }
     return resultat;
+  }
+
+  public abstract void decode();
+
+  public ArrayList<String> getText() {
+    return this.text;
   }
 }

@@ -3,9 +3,9 @@ package main.java.com.lecteur;
 import java.io.File;
 import java.io.FileInputStream;
 
-public class TextFile extends CustomFile {
+public class CsvFile extends CustomFile {
 
-  public TextFile(File f) {
+  public CsvFile(File f) {
     super(f);
   }
 
@@ -16,11 +16,17 @@ public class TextFile extends CustomFile {
       String tampon = new String();
 
       while (i != -1) {
-        if (i == 10) {
-          this.text.add(tampon);
-          tampon = new String();
+        // System.out.println(i + " = " + ((char) i));
+
+        if (i != 44) {
+          if (i == 10) {
+            this.text.add(tampon);
+            tampon = new String();
+          } else {
+            tampon += (char) i;
+          }
         } else {
-          tampon += (char) i;
+          tampon += " ";
         }
         i = in.read();
       }
@@ -29,4 +35,5 @@ public class TextFile extends CustomFile {
       e.getStackTrace();
     }
   }
+
 }
