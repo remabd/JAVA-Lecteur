@@ -35,4 +35,12 @@ public class CsvFile extends CustomFile {
     }
   }
 
+  public boolean compare(CsvFile f) {
+    for (int i = 0; i < f.getText().size(); i++) {
+      if (!f.getText().get(i).equals(this.text.get(i))) {
+        return false;
+      }
+    }
+    return true;
+  }
 }
